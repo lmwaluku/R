@@ -1,0 +1,156 @@
+How to Connect to MySQL Database in R:
+
+Install RMySQL Driver for R:
+
+> install.packages('RMySQL', type = 'source')
+Installing package into ‘C:/Users/lloyd/Documents/R/win-library/3.3’
+(as ‘lib’ is unspecified)
+trying URL 'https://cran.rstudio.com/src/contrib/RMySQL_0.10.9.tar.gz'
+Content type 'application/x-gzip' length 54012 bytes (52 KB)
+downloaded 52 KB
+
+* installing *source* package 'RMySQL' ...
+** package 'RMySQL' successfully unpacked and MD5 sums checked
+** libs
+
+*** arch - i386
+rm -f RMySQL-init.o connection.o db-apply.o driver.o exception.o fields.o result.o utils.o RMySQL.dll
+"C:/PROGRA~1/R/R-33~1.0/bin/i386/Rscript.exe" "../tools/winlibs.R"
+c:/Rtools/mingw_32/bin/gcc  -I"C:/PROGRA~1/R/R-33~1.0/include" -DNDEBUG -I../windows/libmariadbclient-
+
+2.1.0/include    -I"d:/Compiler/gcc-4.9.3/local330/include"     -O3 -Wall  -std=gnu99 -mtune=core2 -c RMySQL-
+
+init.c -o RMySQL-init.o
+c:/Rtools/mingw_32/bin/gcc  -I"C:/PROGRA~1/R/R-33~1.0/include" -DNDEBUG -I../windows/libmariadbclient-
+
+2.1.0/include    -I"d:/Compiler/gcc-4.9.3/local330/include"     -O3 -Wall  -std=gnu99 -mtune=core2 -c 
+
+connection.c -o connection.o
+c:/Rtools/mingw_32/bin/gcc  -I"C:/PROGRA~1/R/R-33~1.0/include" -DNDEBUG -I../windows/libmariadbclient-
+
+2.1.0/include    -I"d:/Compiler/gcc-4.9.3/local330/include"     -O3 -Wall  -std=gnu99 -mtune=core2 -c db-apply.c 
+
+-o db-apply.o
+c:/Rtools/mingw_32/bin/gcc  -I"C:/PROGRA~1/R/R-33~1.0/include" -DNDEBUG -I../windows/libmariadbclient-
+
+2.1.0/include    -I"d:/Compiler/gcc-4.9.3/local330/include"     -O3 -Wall  -std=gnu99 -mtune=core2 -c driver.c 
+
+-o driver.o
+c:/Rtools/mingw_32/bin/gcc  -I"C:/PROGRA~1/R/R-33~1.0/include" -DNDEBUG -I../windows/libmariadbclient-
+
+2.1.0/include    -I"d:/Compiler/gcc-4.9.3/local330/include"     -O3 -Wall  -std=gnu99 -mtune=core2 -c 
+
+exception.c -o exception.o
+c:/Rtools/mingw_32/bin/gcc  -I"C:/PROGRA~1/R/R-33~1.0/include" -DNDEBUG -I../windows/libmariadbclient-
+
+2.1.0/include    -I"d:/Compiler/gcc-4.9.3/local330/include"     -O3 -Wall  -std=gnu99 -mtune=core2 -c fields.c 
+
+-o fields.o
+c:/Rtools/mingw_32/bin/gcc  -I"C:/PROGRA~1/R/R-33~1.0/include" -DNDEBUG -I../windows/libmariadbclient-
+
+2.1.0/include    -I"d:/Compiler/gcc-4.9.3/local330/include"     -O3 -Wall  -std=gnu99 -mtune=core2 -c result.c 
+
+-o result.o
+c:/Rtools/mingw_32/bin/gcc  -I"C:/PROGRA~1/R/R-33~1.0/include" -DNDEBUG -I../windows/libmariadbclient-
+
+2.1.0/include    -I"d:/Compiler/gcc-4.9.3/local330/include"     -O3 -Wall  -std=gnu99 -mtune=core2 -c utils.c -o 
+
+utils.o
+c:/Rtools/mingw_32/bin/gcc -shared -s -static-libgcc -o RMySQL.dll tmp.def RMySQL-init.o connection.o db-apply.o 
+
+driver.o exception.o fields.o result.o utils.o -L../windows/libmariadbclient-2.1.0/lib/i386 -lmariadbclient -
+
+lssl -lcrypto -lgdi32 -lz -lws2_32 -Ld:/Compiler/gcc-4.9.3/local330/lib/i386 -Ld:/Compiler/gcc-
+
+4.9.3/local330/lib -LC:/PROGRA~1/R/R-33~1.0/bin/i386 -lR
+installing to C:/Users/lloyd/Documents/R/win-library/3.3/RMySQL/libs/i386
+
+*** arch - x64
+rm -f RMySQL-init.o connection.o db-apply.o driver.o exception.o fields.o result.o utils.o RMySQL.dll
+"C:/PROGRA~1/R/R-33~1.0/bin/x64/Rscript.exe" "../tools/winlibs.R"
+c:/Rtools/mingw_64/bin/gcc  -I"C:/PROGRA~1/R/R-33~1.0/include" -DNDEBUG -I../windows/libmariadbclient-
+
+2.1.0/include    -I"d:/Compiler/gcc-4.9.3/local330/include"     -O2 -Wall  -std=gnu99 -mtune=core2 -c RMySQL-
+
+init.c -o RMySQL-init.o
+c:/Rtools/mingw_64/bin/gcc  -I"C:/PROGRA~1/R/R-33~1.0/include" -DNDEBUG -I../windows/libmariadbclient-
+
+2.1.0/include    -I"d:/Compiler/gcc-4.9.3/local330/include"     -O2 -Wall  -std=gnu99 -mtune=core2 -c 
+
+connection.c -o connection.o
+c:/Rtools/mingw_64/bin/gcc  -I"C:/PROGRA~1/R/R-33~1.0/include" -DNDEBUG -I../windows/libmariadbclient-
+
+2.1.0/include    -I"d:/Compiler/gcc-4.9.3/local330/include"     -O2 -Wall  -std=gnu99 -mtune=core2 -c db-apply.c 
+
+-o db-apply.o
+c:/Rtools/mingw_64/bin/gcc  -I"C:/PROGRA~1/R/R-33~1.0/include" -DNDEBUG -I../windows/libmariadbclient-
+
+2.1.0/include    -I"d:/Compiler/gcc-4.9.3/local330/include"     -O2 -Wall  -std=gnu99 -mtune=core2 -c driver.c 
+
+-o driver.o
+c:/Rtools/mingw_64/bin/gcc  -I"C:/PROGRA~1/R/R-33~1.0/include" -DNDEBUG -I../windows/libmariadbclient-
+
+2.1.0/include    -I"d:/Compiler/gcc-4.9.3/local330/include"     -O2 -Wall  -std=gnu99 -mtune=core2 -c 
+
+exception.c -o exception.o
+c:/Rtools/mingw_64/bin/gcc  -I"C:/PROGRA~1/R/R-33~1.0/include" -DNDEBUG -I../windows/libmariadbclient-
+
+2.1.0/include    -I"d:/Compiler/gcc-4.9.3/local330/include"     -O2 -Wall  -std=gnu99 -mtune=core2 -c fields.c 
+
+-o fields.o
+c:/Rtools/mingw_64/bin/gcc  -I"C:/PROGRA~1/R/R-33~1.0/include" -DNDEBUG -I../windows/libmariadbclient-
+
+2.1.0/include    -I"d:/Compiler/gcc-4.9.3/local330/include"     -O2 -Wall  -std=gnu99 -mtune=core2 -c result.c 
+
+-o result.o
+c:/Rtools/mingw_64/bin/gcc  -I"C:/PROGRA~1/R/R-33~1.0/include" -DNDEBUG -I../windows/libmariadbclient-
+
+2.1.0/include    -I"d:/Compiler/gcc-4.9.3/local330/include"     -O2 -Wall  -std=gnu99 -mtune=core2 -c utils.c -o 
+
+utils.o
+c:/Rtools/mingw_64/bin/gcc -shared -s -static-libgcc -o RMySQL.dll tmp.def RMySQL-init.o connection.o db-apply.o 
+
+driver.o exception.o fields.o result.o utils.o -L../windows/libmariadbclient-2.1.0/lib/x64 -lmariadbclient -lssl 
+
+-lcrypto -lgdi32 -lz -lws2_32 -Ld:/Compiler/gcc-4.9.3/local330/lib/x64 -Ld:/Compiler/gcc-4.9.3/local330/lib -
+
+LC:/PROGRA~1/R/R-33~1.0/bin/x64 -lR
+installing to C:/Users/lloyd/Documents/R/win-library/3.3/RMySQL/libs/x64
+** R
+** preparing package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** testing if installed package can be loaded
+*** arch - i386
+*** arch - x64
+* DONE (RMySQL)
+
+The downloaded source packages are in
+	‘C:\Users\lloyd\AppData\Local\Temp\RtmpALXVmR\downloaded_packages’
+
+Load the RMySQL Library into R:
+
+> library(RMySQL)
+Loading required package: DBI
+
+
+NOTE: Using MySQL Database from XAMPP so ensure you start your MySQL from the XAMPP Control Panel:
+
+Connect to MySQL Database running on your local machine:
+
+> cnn<-dbConnect(MySQL(), user="root", host="localhost")
+> result<-dbGetQuery(cnn,"show databases;")
+> result
+            Database
+1 information_schema
+2              cdcol
+3              mysql
+4 performance_schema
+5         phpmyadmin
+6               test
+7            webauth
+
+Don't forget to Disconnect Database Connection once you done.
+
+> dbDisconnect(cnn)
